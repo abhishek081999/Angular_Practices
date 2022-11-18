@@ -1,0 +1,51 @@
+<section [class.hide]="isDataSubmitted">
+  <div class="input-group">
+    <label>Name</label
+    ><input
+      type="text"
+      name="name"
+      (keyup)="setValue($event)"
+      [value]="person.name"
+    />
+  </div>
+  <div class="input-group">
+    <label>Email</label
+    ><input
+      type="text"
+      name="email"
+      (keyup)="setValue($event)"
+      [value]="person.email"
+    />
+  </div>
+  <div class="input-group">
+    <label>Company Name</label
+    ><input
+      type="text"
+      name="cmp"
+      (keyup)="setValue($event)"
+      [value]="person.cmp"
+    />
+  </div>
+  <div class="input-group">
+    <label>Salary</label
+    ><input
+      type="text"
+      name="sal"
+      (keyup)="setValue($event)"
+      [value]="person.sal"
+    />
+  </div>
+
+  <button (click)="submitData()">Submit</button>
+</section>
+
+<section [class.hide]="!isDataSubmitted">
+  <p>Than you for your details</p>
+  <hr />
+  <p>Name: {{ person.name }}</p>
+  <p>Email: {{ person.email }}</p>
+  <p>Company Name: {{ person.cmp }}</p>
+  <p>salary: {{ person.sal }}</p>
+
+  <button (click)="resetForm()">Submit one more</button>
+</section>
