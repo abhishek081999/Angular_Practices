@@ -1,0 +1,17 @@
+<select (change)="handleEvent($event)">
+  <option value="C">C</option>
+  <option value="Cpp">Cpp</option>
+  <option value="C#">C#</option>
+  <option value="JAVA">JAVA</option>
+</select>
+
+<p *ngIf="selectedSkill"> Selected Skill set is {{ selectedSkill }}</p>
+
+<!-- 
+<div *ngIf="!isDataArrived">
+  loading......
+  <div>
+
+    <section *ngIf="isDataArrived">your data: {{data}}</section>
+
+ -->
