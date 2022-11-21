@@ -6,24 +6,44 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  selectedSkill = '';
+  // names: string[] = ['Ajit','Abhishek', 'avinash'];
+  users = [
+    {
+      name: "ajit",
+      email: "ajit@123.com",
+      skill: "clang",
+      website:'www.google.com'
+    },
+    { name: "ajibvgt", 
+      email: "ajihgfhgt@123.com",  
+      skill: "clanhghjg",
+      website:'www.google.com'
+     },
+    { name: "ajithbghgv", 
+    email: "ajitghhgghgh@123.com", 
+    skill: "clang" ,
+    website:'www.google.com'},
 
+    { name: "ajvhgit", 
+    email: "ajitbbnb@123.com", 
+    skill: "clanbnbg" ,
+    website:'www.google.com'},
+  ];
 
-  handleEvent(event) {
-    const value = event.target.value;
-    this.selectedSkill=value;
+curentUser = null;
+isDisabled = true;
+  showAndEdit(indexNum){
+    this.isDisabled = true;
+    this.curentUser = this.users[indexNum];
   }
-//   data='';
-//     isDataArrived = false;
 
-//     constructor(){
-//       this.getData();
-//     }
+  setValue(event){
+ const value = event.target.value;
+ const keyName = event.target.name;
+ this.curentUser[keyName]=value;
+  }
 
-//     getData(){
-//       setTimeout(()=>{
-//         this.data='data from server';
-//         this.isDataArrived = true;
-//       },4000);
-//     }
- }
+  enableEditing() {
+    this.isDisabled = false;
+  }
+}

@@ -1,17 +1,25 @@
-<select (change)="handleEvent($event)">
-  <option value="C">C</option>
-  <option value="Cpp">Cpp</option>
-  <option value="C#">C#</option>
-  <option value="JAVA">JAVA</option>
-</select>
+<!-- <ul>
+  <li *ngFor="let name of names">
+    {{name}}
+  </li>
+</ul> -->
 
-<p *ngIf="selectedSkill"> Selected Skill set is {{ selectedSkill }}</p>
+<section>
+  <div *ngFor="let user of users; let i = index;">
+    <p>Sr. No {{i+1}}</p>
+  <p>Name: {{user.name}}</p>
+  <!-- <p>Email: {{user.email}}</p>
+  <p>Skill: {{user.skill}} </p> -->
+  <button (click)="showAndEdit(i)">Show Details/Edit</button>
+  
+</div>
+</section>
 
-<!-- 
-<div *ngIf="!isDataArrived">
-  loading......
-  <div>
+<section *ngIf="curentUser">
+  Name <input type="text" name="name" (keyup)="setValue($event)" [value]="curentUser.name" [disabled]="isDisabled"/>
+  Email <input type="text" name="email" (keyup)="setValue($event)" [value]="curentUser.email"[disabled]="isDisabled"/>
+  Skill <input type="text"  name="skill" (keyup)="setValue($event)" [value]="curentUser.skill"[disabled]="isDisabled"/>
+  Website <input type="text" name="website" (keyup)="setValue($event)" [value]="curentUser.website"[disabled]="isDisabled"/>
 
-    <section *ngIf="isDataArrived">your data: {{data}}</section>
-
- -->
+ <button (click)="enableEditing()">Enable Editing</button>
+</section>
