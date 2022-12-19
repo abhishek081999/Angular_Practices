@@ -1,25 +1,29 @@
-<!-- <ul>
-  <li *ngFor="let name of names">
-    {{name}}
-  </li>
-</ul> -->
+<!-- <section [ngSwitch]="name">
+  <p *ngSwitchCase="'Ajit'">ajit is kid</p>
+  <p *ngSwitchCase="'Sagar'">sagar is pro</p>
+  <p *ngSwitchCase="'kulio'">kuilo is legend</p>
+  <p *ngSwitchDefault>found no person </p>
+</section> -->
 
 <section>
-  <div *ngFor="let user of users; let i = index;">
-    <p>Sr. No {{i+1}}</p>
-  <p>Name: {{user.name}}</p>
-  <!-- <p>Email: {{user.email}}</p>
-  <p>Skill: {{user.skill}} </p> -->
-  <button (click)="showAndEdit(i)">Show Details/Edit</button>
-  
-</div>
+  <nav>
+    <ul>
+      <li (click)="openTab()" [class.active]="currentTab==''">Home</li>
+      <li (click)="openTab('about')" [class.active]="currentTab=='about'">About </li>
+      <li (click)="openTab('profile')" [class.active]="currentTab=='profile'">Profile</li>
+      <li (click)="openTab('contact')" [class.active]="currentTab=='contact'">Contact</li>
+    </ul>
+  </nav>
 </section>
 
-<section *ngIf="curentUser">
-  Name <input type="text" name="name" (keyup)="setValue($event)" [value]="curentUser.name" [disabled]="isDisabled"/>
-  Email <input type="text" name="email" (keyup)="setValue($event)" [value]="curentUser.email"[disabled]="isDisabled"/>
-  Skill <input type="text"  name="skill" (keyup)="setValue($event)" [value]="curentUser.skill"[disabled]="isDisabled"/>
-  Website <input type="text" name="website" (keyup)="setValue($event)" [value]="curentUser.website"[disabled]="isDisabled"/>
-
- <button (click)="enableEditing()">Enable Editing</button>
+<section [ngSwitch]="currentTab">
+  <div *ngSwitchCase="'about'">I am on About section</div>
+  <div *ngSwitchCase="'profile'">My Profile</div>
+  <div *ngSwitchCase="'contact'">Contact Page  
+    <form action="#">
+    name<input type="text"/><br/>
+    email<input type="text"/><br/>
+    </form>
+  </div>
+  <div *ngSwitchDefault>Home page content</div>
 </section>

@@ -1,4 +1,4 @@
-div{
+/* div{
     display: inline-block;
     border-right: 2px solid grey;
     margin: 5px;
@@ -7,4 +7,21 @@ div{
 
 input{
     display:block;
+} */
+
+
+ul{
+    margin-bottom:5px ;
+    border-bottom:2px solid black ;
+}
+li{
+    display: inline-block;
+    padding: 5px;
+margin: 5px;
+cursor: pointer;
+
+}
+
+.active{
+    border-top: 2px solid skyblue;
 }
