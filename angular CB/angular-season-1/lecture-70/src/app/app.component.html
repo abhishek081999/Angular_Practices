@@ -1,0 +1,7 @@
+<h2>Admin Phone Configs</h2>
+
+Phone: <input #phn (keyup.enter)="phone = phn.value">
+Length: <input #trimLen (keyup.enter)="trimLength = trimLen.value">
+Pattern: <input #pat (keyup.enter)="pattern = pat.value">
+
+<p>{{ phone | phone:trimLength :pattern }}</p>

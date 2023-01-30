@@ -1,0 +1,10 @@
+<h1>Upload file</h1>
+
+<input type="file" #fileInp (change)="addFile(fileInp.files)">
+
+<hr />
+
+<!-- this context in memoizedFn pipe (check the memoized pipe) -->
+{{ sizeCharge | memoizedFn :this :file?.size }}
+
+<button (click)="0">Trigger</button>

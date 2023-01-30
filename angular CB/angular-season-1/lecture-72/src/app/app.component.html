@@ -1,0 +1,16 @@
+<section>
+
+    <input #name (keyup.enter)="changeName(name.value); name.value = '';">
+
+    <br />
+
+    Name: {{ user.name }}
+
+    <br />
+
+    Email: {{ user.email }}
+
+    <br />
+
+    <img [src]="user | userPicture">
+</section>
