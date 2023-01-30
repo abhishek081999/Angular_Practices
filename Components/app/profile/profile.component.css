@@ -1,0 +1,14 @@
+section{
+    display: flex;
+    justify-content: space-around;
+}
+
+ul{
+    padding:0px;
+}
+.post li {
+    display: inline-block;
+    padding:5px;
+    border-right: 1px solid grey;
+    margin:5px;
+}
