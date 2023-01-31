@@ -1,0 +1,10 @@
+
+<h1>Fav Food</h1>
+
+<ul>
+    <li *ngFor = "let food of foods">
+        {{food}}
+    </li>
+</ul>
+
+<app-child (foodEvt)="afterFoodAdd($event)"></app-child>
