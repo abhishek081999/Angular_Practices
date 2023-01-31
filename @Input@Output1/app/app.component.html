@@ -1,0 +1,4 @@
+Enter Food name: <input type="text" (keyup.enter)="addFood(foodInp.value)" #foodInp />
+<app-child [foods]="foods" (delEvt)="removeFood($event)"></app-child>
+<hr/>
+<p>you removed {{deletedFood}}</p>
