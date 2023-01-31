@@ -1,0 +1,20 @@
+
+<div>
+  <p>
+    <strong>Product Name: </strong>{{productData.name}}
+  </p>
+
+  <p>
+    <strong>Qty: </strong>{{productData.qty}}
+  </p>
+  <p>
+    <strong>Total Price: </strong>{{productData.qty * productData.price}}
+    <br>
+  <button (click)="updateCart()">{{isAddedtoCart ? 'Remove from':'Add to' }}  cart</button>
+  </p>
+
+  <button (click)="incQty()">Increase Quantity</button>
+  <button (click)="decQty()">Decrease Quantity</button>
+  
+</div>
+<hr/>
